@@ -6,7 +6,9 @@
 
   RUN apt-get install -y python3 python3-pip
 
-  RUN flask pip3 
+  RUN rm -f /usr/lib/python*/EXTERNALLY-MANAGED
+
+  RUN pip3 install flask
 
   WORKDIR /app
 
@@ -14,4 +16,4 @@
 
 
 
-  CMD ["python3", "--version"]
+  CMD ["python3", "api.py"]
