@@ -16,3 +16,13 @@
         - "9000:9000"
       depends_on:
         - back-end
+    proxy:
+      build:
+        context: contextPath
+        dockerfile: Dockerfile
+      image: proxy-image-name
+      ports:
+        - "80:80"
+      depends_on:
+        - front-end
+        - back-end
